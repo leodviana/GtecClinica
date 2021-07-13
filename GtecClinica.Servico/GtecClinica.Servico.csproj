@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GtecClinica.Abstrato\GtecClinica.Abstrato.csproj" />
+    <ProjectReference Include="..\GtecClinica.Dados\GtecClinica.Dados.csproj" />
+  </ItemGroup>
+
+</Project>

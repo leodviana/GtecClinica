@@ -1,0 +1,32 @@
+﻿@using GtecClinica.Web.ViewModel.Teste
+@model TesteFiltroVm
+
+@{
+    ViewData["Title"] = $"{Html.DisplayNameFor(x => x.LblTituloConsulta)}";
+}
+
+<h4>@ViewData["Title"]</h4>
+<div>
+    <form asp-controller="Teste" asp-action="Lista" method="get">
+        <fieldset>
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label asp-for="LblNome" class="control-label"></label>
+                    <input type="text" asp-for="Nome" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary ">@Html.DisplayNameFor(x => x.LblBotaoConsultar)</button>
+        </fieldset>
+    </form>
+
+    <div id="result">
+        @if (Model != null && Model.Lista != null)
+        {
+            if (Model.Lista.Any())
+            {
+                await Html.RenderPartialAsync("_Lista", Model);
+            }
+           
+        }
+    </div>
+</div>
